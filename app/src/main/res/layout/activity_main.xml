@@ -34,8 +34,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-100dp"
         android:backgroundTint="@color/primary_orange"
-        android:onClick="SwitchScreen"
-        android:text="@string/welcome_button" />
+        android:text="@string/welcome_button"
+        />
 
 
 </RelativeLayout>

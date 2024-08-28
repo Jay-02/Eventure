@@ -2,6 +2,7 @@ package com.example.eventure;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -11,7 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button welcome_button = findViewById(R.id.welcome_button);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +22,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        welcome_button.setOnClickListener(view -> {
-//                Intent intent = new Intent(MainActivity.this, AccountType.class);
-//                startActivity(intent);
 
-        });
+        Button welcome_button = (Button) findViewById(R.id.welcome_button);
+      welcome_button.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(MainActivity.this, AccountType.class);
+              startActivity(intent);
+          }
+      });
     }
 }

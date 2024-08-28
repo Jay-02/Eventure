@@ -1,6 +1,8 @@
 package com.example.eventure;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,4 +23,5 @@ public class AdminLogin extends AppCompatActivity {
             return insets;
         });
     }
+
 }
