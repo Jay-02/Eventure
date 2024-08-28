@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Eventure</string>
+    <string name="welcome_button">Welcome</string>
+    <string name="welcome_screen_prompt">Please Select Account Type:</string>
+    <string name= "or">Or</string>
+    <string name="explorer_button">Explorer</string>
+    <string name="event_organizer_button">Event Organizer</string>
+</resources>
