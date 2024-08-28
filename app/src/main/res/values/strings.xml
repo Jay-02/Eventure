@@ -2,7 +2,11 @@
     <string name="app_name">Eventure</string>
     <string name="welcome_button">Welcome</string>
     <string name="welcome_screen_prompt">Please Select Account Type:</string>
-    <string name= "or">Or</string>
+    <string name="or">Or</string>
     <string name="explorer_button">Explorer</string>
     <string name="event_organizer_button">Event Organizer</string>
+    <string name="admin_login_text_view">Please log in to manage and oversee</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
 </resources>
