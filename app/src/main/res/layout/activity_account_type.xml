@@ -1,78 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/account_type_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".AccountType">
+
     <ImageView
         android:id="@+id/choice_screen_art_asset"
-        android:src="@drawable/choice_screen_art_asset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="110dp"
-
+        android:src="@drawable/choice_screen_art_asset"
         />
+
     <TextView
         android:id="@+id/account_type_text_view"
-        android:text="@string/welcome_screen_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/choice_screen_art_asset"
-        android:layout_marginTop="20dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/welcome_screen_prompt" />
 
     <Button
         android:id="@+id/explorer_button"
-        android:text="@string/explorer_button"
-        android:backgroundTint="@color/primary_orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/account_type_text_view"
-        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:paddingHorizontal="50dp"/>
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/primary_orange"
+        android:paddingHorizontal="50dp"
+        android:text="@string/explorer_button"
+        android:textSize="24sp" />
+
     <TextView
         android:id="@+id/or_text_view"
-        android:text="@string/or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/explorer_button"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/or" />
+
     <Button
-    android:id="@+id/event_organizer_button"
-    android:text="@string/event_organizer_button"
-    android:backgroundTint="@color/dark_green"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/or_text_view"
-    android:layout_marginTop="10dp"
-    android:layout_centerHorizontal="true"/>
+        android:id="@+id/event_organizer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/or_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/dark_green"
+        android:text="@string/event_organizer_button"
+        android:textSize="24sp" />
+
     <ImageView
         android:id="@+id/top_right_blob"
-        android:src="@drawable/top_right_blob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/top_right_blob" />
+
     <ImageView
         android:id="@+id/bottom_left_blob"
-        android:src="@drawable/bottom_left_blob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/bottom_left_blob" />
+
     <ImageView
         android:id="@+id/admin_login_asset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="30dp"
+        android:layout_toEndOf="@id/bottom_left_blob"
+        android:clickable="true"
         android:contentDescription="@string/go_to_admin_login"
         android:focusable="true"
-        android:src="@drawable/admin_icon"
-        android:clickable="true"
-        android:layout_toEndOf="@id/bottom_left_blob"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="100dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:src="@drawable/admin_icon" />
 </RelativeLayout>
