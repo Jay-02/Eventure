@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Eventure"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".Explorer_Login"
             android:exported="false" />
         <activity
