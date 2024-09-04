@@ -1,5 +1,6 @@
 package com.example.eventure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import org.w3c.dom.Text;
 
 public class Explorer_Login extends AppCompatActivity {
 
@@ -27,7 +30,15 @@ public class Explorer_Login extends AppCompatActivity {
         forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle the click event
+                Intent intent = new Intent(Explorer_Login.this, ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
+        TextView create_an_account = findViewById(R.id.explorer_login_create_an_account);
+        create_an_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /* TODO: add create_an_account start activity */
 
             }
         });

@@ -14,4 +14,8 @@
     <string name="explorer_login_second_prompt">Eventure is your gateway to discover unforgettable experiences</string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="explorer_login_create_an_account">Don\'t have an Account? Sign up now</string>
+    <string name="forgot_password_first_view_prompt">Forgot Password</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="email_edit_text_hint">e.g. Example@gmail.com</string>
+    <string name="reset_password">Reset Password</string>
 </resources>
