@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ExplorerSignUp">
+
+    <ImageView
+        android:id="@+id/top_right_blob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/top_right_blob" />
+
+    <ImageView
+        android:id="@+id/eventure_logo_small_asset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="-10dp"
+        android:src="@drawable/small_eventure_logo_asset" />
+
+    <TextView
+        android:id="@+id/explorer_signup_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_right_blob"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/explorer_signup_header"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/explorer_signup_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/explorer_signup_header"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/explorer_signup_prompt"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/explorer_signup_username"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/explorer_signup_prompt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_orange"
+        android:hint="@string/explorer_signup_username"
+        android:paddingHorizontal="20dp" />
+
+    <EditText
+        android:id="@+id/explorer_signup_email"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/explorer_signup_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_orange"
+        android:hint="@string/explorer_signup_email"
+        android:paddingHorizontal="20dp" />
+
+    <EditText
+        android:id="@+id/explorer_signup_password"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/explorer_signup_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_orange"
+        android:hint="@string/explorer_signup_password"
+        android:paddingHorizontal="20dp" />
+
+    <EditText
+        android:id="@+id/explore_signup_repeat_password"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/explorer_signup_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_orange"
+        android:hint="@string/explorer_signup_repeat_password"
+        android:paddingHorizontal="20dp" />
+
+    <Spinner
+        android:id="@+id/explorer_signup_gender_spinner"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/explore_signup_repeat_password"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_orange"
+        android:paddingStart="15dp" />
+    <!--    <DatePicker-->
+    <!--        android:id="@+id/_explorer_signup_datepicker"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/explore_signup_repeat_password"/>-->
+    <Button
+        android:id="@+id/explorer_signup_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/explorer_signup_gender_spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/primary_orange"
+        android:text="@string/explorer_signup_create_an_account"
+        android:textSize="18dp" />
+</RelativeLayout>

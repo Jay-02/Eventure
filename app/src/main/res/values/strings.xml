@@ -1,21 +1,50 @@
 <resources>
+    <!--    First two Activities    -->
     <string name="app_name">Eventure</string>
     <string name="welcome_button">Welcome</string>
     <string name="welcome_screen_prompt">Please Select Account Type:</string>
     <string name="or">Or</string>
     <string name="explorer_button">Explorer</string>
     <string name="event_organizer_button">Event Organizer</string>
+    <!--    Admin Login -->
     <string name="admin_login_text_view">Please log in to manage and oversee</string>
-    <string name="username">Email or Username</string>
+    <string name="username_or_email">Email or Username</string>
     <string name="password">Password</string>
     <string name="login_button">Login</string>
     <string name="go_to_admin_login">Go to admin login</string>
+    <!--    Explorer Login  -->
     <string name="explorer_login_first_prompt">Ready to explore new adventures?</string>
     <string name="explorer_login_second_prompt">Eventure is your gateway to discover unforgettable experiences</string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="explorer_login_create_an_account">Don\'t have an Account? Sign up now</string>
+    <string name="explorer_login_username_or_password">Username or Password</string>
+    <!--    Forgot Password -->
     <string name="forgot_password_first_view_prompt">Forgot Password</string>
     <string name="enter_email_address">Enter Email Address</string>
     <string name="email_edit_text_hint">e.g. Example@gmail.com</string>
     <string name="reset_password">Reset Password</string>
+    <string name="admin_login_username_or_email">Username or Email</string>
+    <!--    Explorer Sign up    -->
+    <string name="explorer_signup_header">Sign Up</string>
+    <string name="explorer_signup_prompt">To discover new experiences, connect with your community, and create everlasting memories</string>
+    <string name="explorer_signup_username">Username</string>
+    <string name="explorer_signup_email">Your Email</string>
+    <string name="explorer_signup_password">Create your Password</string>
+    <string name="explorer_signup_repeat_password">Re-type Password</string>
+    <string-array name="gender_spinner">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+<string name="explorer_signup_create_an_account">Create an Account</string>
+    <string name="title_activity_explorer_home">ExplorerHome</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>
