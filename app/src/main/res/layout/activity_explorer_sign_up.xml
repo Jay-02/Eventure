@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="@string/explorer_signup_header"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <TextView
@@ -96,12 +96,14 @@
         android:id="@+id/explorer_signup_gender_spinner"
         android:layout_width="150dp"
         android:layout_height="60dp"
+        android:spinnerMode="dropdown"
         android:layout_below="@id/explore_signup_repeat_password"
         android:layout_alignParentStart="true"
         android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/custom_input_orange"
-        android:paddingStart="15dp" />
+        android:background="@drawable/custom_spinner_orange"
+
+        />
     <!--    <DatePicker-->
     <!--        android:id="@+id/_explorer_signup_datepicker"-->
     <!--        android:layout_width="wrap_content"-->

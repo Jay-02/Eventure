@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-        <item android:state_enabled="true" android:state_focused="true">
-            <shape android:shape="rectangle">
-                <solid android:color="@color/light_gray"/>
-                <corners android:radius="50dp"/>
-                <stroke android:color="@color/primary_orange" android:width="2dp"/>
-            </shape>
-        </item>
 
-        <item android:state_enabled="true">
-            <shape android:shape="rectangle">
-                <solid android:color="@color/light_gray"/>
-                <corners android:radius="40dp"/>
-                <stroke/>
-            </shape>
-        </item>
+    <item android:state_enabled="true" android:state_focused="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/light_gray" />
+                    <padding android:left="12dp" android:right="12dp" />
+                    <corners android:radius="40dp" />
+                    <stroke android:width="2dp" android:color="@color/primary_orange" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_filled_downward_facing_arrow" android:gravity="end" />
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item android:state_enabled="true">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/light_gray" />
+                    <padding android:left="12dp" android:right="12dp"/>
+                    <corners android:radius="40dp" />
+                    <stroke />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_filled_downward_facing_arrow" android:gravity="end"/>
+        </layer-list>
+    </item>
 </selector>
