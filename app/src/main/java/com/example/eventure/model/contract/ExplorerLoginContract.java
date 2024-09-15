@@ -1,5 +1,7 @@
 package com.example.eventure.model.contract;
 
+import android.widget.AdapterView;
+
 public interface ExplorerLoginContract {
     interface View {
         void showToast();

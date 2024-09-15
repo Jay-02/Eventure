@@ -103,6 +103,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_spinner_orange"
 
+
         />
     <!--    <DatePicker-->
     <!--        android:id="@+id/_explorer_signup_datepicker"-->
@@ -119,5 +120,5 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/primary_orange"
         android:text="@string/explorer_signup_create_an_account"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 </RelativeLayout>

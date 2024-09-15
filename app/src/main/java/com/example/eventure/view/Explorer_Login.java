@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.eventure.R;
 import com.example.eventure.model.contract.ExplorerLoginContract;
-import com.example.eventure.presenter.LoginPresenter;
+import com.example.eventure.presenter.ExplorerLoginPresenter;
 
 public class Explorer_Login extends AppCompatActivity implements ExplorerLoginContract.View {
 
@@ -34,7 +34,7 @@ public class Explorer_Login extends AppCompatActivity implements ExplorerLoginCo
         loginButton = findViewById(R.id.explorer_login_button);
         forgotPasswordButton = findViewById(R.id.explorer_login_forgot_password);
         signUpButton = findViewById(R.id.explorer_login_create_an_account);
-        presenter = new LoginPresenter(this);
+        presenter = new ExplorerLoginPresenter(this);
         loginButton.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
