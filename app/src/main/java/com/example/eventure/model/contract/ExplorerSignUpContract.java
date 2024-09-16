@@ -6,20 +6,20 @@ public interface ExplorerSignUpContract {
 
         void showUsernameError(String message);
 
-        void emailNotValid();
+        void emailNotValid(String errorMessage);
 
         void emailAlreadyUsed();
 
-        void passwordNotValid();
+        void passwordNotValid(String errorMessage);
 
-        void passwordMismatch();
+        void passwordMismatch(String errorMessage);
 
 
-        void birthdateNotValid();
+        void birthdateNotValid(String errorMessage);
 
-        void SignUpSuccess();
+        void showSignUpSuccess();
 
-        void SignUpFailure();
+        void showSignUpFailure();
 
 
 

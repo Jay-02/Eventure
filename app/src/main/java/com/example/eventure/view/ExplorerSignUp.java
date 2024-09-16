@@ -22,8 +22,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.eventure.R;
 import com.example.eventure.model.contract.ExplorerSignUpContract;
+import com.example.eventure.presenter.ExplorerSignUpPresenter;
 
 public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener, ExplorerSignUpContract.View {
+    private ExplorerSignUpPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +45,12 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
         EditText username = findViewById(R.id.explorer_signup_username);
+//        SusernameText
         EditText email = findViewById(R.id.explorer_signup_email);
         EditText password = findViewById(R.id.explorer_signup_password);
         EditText repeatPassword = findViewById(R.id.explorer_signup_repeat_password);
+        Button signUpButton = findViewById(R.id.explorer_signup_button);
+        // Calendar button
         ImageButton calendarButton = findViewById(R.id.explorer_signup_birthdate_button);
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +64,8 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                String date;
-                date = year+"."+month+"."+day;
+                String date = String.valueOf(year)+"."+ String.valueOf(month)+"."+String.valueOf(day);
+
             }
 
         });
@@ -93,9 +98,10 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
     }
 
     @Override
-    public void emailNotValid() {
+    public void emailNotValid(String errorMessage) {
 
     }
+
 
     @Override
     public void emailAlreadyUsed() {
@@ -103,27 +109,27 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
     }
 
     @Override
-    public void passwordNotValid() {
+    public void passwordNotValid(String errorMessage) {
 
     }
 
     @Override
-    public void passwordMismatch() {
+    public void passwordMismatch(String errorMessage) {
 
     }
 
     @Override
-    public void birthdateNotValid() {
+    public void birthdateNotValid(String errorMessage) {
 
     }
 
     @Override
-    public void SignUpSuccess() {
+    public void showSignUpSuccess() {
 
     }
 
     @Override
-    public void SignUpFailure() {
+    public void showSignUpFailure() {
 
     }
 }
