@@ -81,7 +81,7 @@
         android:paddingHorizontal="20dp" />
 
     <EditText
-        android:id="@+id/explore_signup_repeat_password"
+        android:id="@+id/explorer_signup_repeat_password"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/explorer_signup_password"
@@ -92,24 +92,47 @@
         android:hint="@string/explorer_signup_repeat_password"
         android:paddingHorizontal="20dp" />
 
+    <TextView
+        android:id="@+id/explorer_signup_gender_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="@string/explorer_signup_gender_text_view"
+        android:layout_above="@id/explorer_signup_gender_spinner"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:id="@+id/explorer_signup_birthdate_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="@string/explorer_signup_birthdate_text_view"
+        android:layout_below="@id/explorer_signup_repeat_password"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="5dp"
+        />
+
     <Spinner
         android:id="@+id/explorer_signup_gender_spinner"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="60dp"
         android:spinnerMode="dropdown"
-        android:layout_below="@id/explore_signup_repeat_password"
+        android:layout_below="@id/explorer_signup_birthdate_text_view"
         android:layout_alignParentStart="true"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/custom_spinner_orange"
 
 
         />
-    <!--    <DatePicker-->
-    <!--        android:id="@+id/_explorer_signup_datepicker"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@id/explore_signup_repeat_password"/>-->
+<!--        <DatePicker-->
+<!--            android:id="@+id/_explorer_signup_datepicker"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/explore_signup_repeat_password"/>-->
     <Button
         android:id="@+id/explorer_signup_button"
         android:layout_width="match_parent"
@@ -121,4 +144,18 @@
         android:backgroundTint="@color/primary_orange"
         android:text="@string/explorer_signup_create_an_account"
         android:textSize="18sp" />
+    <ImageButton
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/explorer_signup_birthdate_button"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_toEndOf="@id/explorer_signup_gender_spinner"
+        android:layout_below="@id/explorer_signup_birthdate_text_view"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:background="@drawable/custom_calendar_button"
+
+        />
 </RelativeLayout>

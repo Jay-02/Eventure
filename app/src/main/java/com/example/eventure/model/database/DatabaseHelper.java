@@ -1,5 +1,6 @@
 package com.example.eventure.model.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -30,6 +31,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_EXPLORER_TABLE);
+    }
+    public void registerExplorer(String username, String email, String password, String gender, String birthdate){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put(COLUMN_EXPLORER_USERNAME, username);
+        contentValues.put(COLUMN_EXPLORER_EMAIL, email);
+        contentValues.put(COLUMN_EXPLORER_PASSWORD, password);
+        contentValues.put(COLUMN_GENDER, gender);
+        contentValues.put(COLUMN_BIRTHDATE,birthdate);
+        db.insert(TABLE_EXPLORER, null, contentValues);
     }
 
     @Override

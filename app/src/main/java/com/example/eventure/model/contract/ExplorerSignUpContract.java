@@ -4,7 +4,7 @@ public interface ExplorerSignUpContract {
     interface View {
         void showGenderError(String message);
 
-        void usernameNotAvailable();
+        void showUsernameError(String message);
 
         void emailNotValid();
 
@@ -13,6 +13,7 @@ public interface ExplorerSignUpContract {
         void passwordNotValid();
 
         void passwordMismatch();
+
 
         void birthdateNotValid();
 

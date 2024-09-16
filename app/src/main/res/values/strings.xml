@@ -35,7 +35,13 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-<string name="explorer_signup_create_an_account">Create an Account</string>
+    <string name="explorer_signup_create_an_account">Create an Account</string>
+    <string name="explorer_signup_gender_text_view">Gender</string>
+    <string name="explorer_signup_birthdate_text_view">Birthdate</string>
+
+
+
+
     <string name="title_activity_explorer_home">ExplorerHome</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
