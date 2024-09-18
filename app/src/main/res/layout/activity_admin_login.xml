@@ -3,7 +3,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminLogin">
+    tools:context=".view.AdminLogin">
 
     <ImageView
         android:id="@+id/admin_top_right_blob"
@@ -36,13 +36,13 @@
         android:id="@+id/username_edit_text"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginHorizontal="85dp"
+        android:layout_marginHorizontal="60dp"
         android:background="@drawable/custom_input_green"
         android:paddingVertical="10dp"
         android:layout_below="@+id/admin_login_asset"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:hint="@string/username"
+        android:hint="@string/username_or_email"
         android:paddingHorizontal="20dp"
         android:textAlignment="textStart"
         android:textSize="24sp" />
@@ -50,7 +50,7 @@
     <EditText
         android:id="@+id/password_edit_text"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="85dp"
+        android:layout_marginHorizontal="60dp"
         android:layout_height="60dp"
         android:layout_below="@+id/username_edit_text"
         android:layout_centerHorizontal="true"

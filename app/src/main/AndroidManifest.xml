@@ -13,23 +13,25 @@
         android:theme="@style/Theme.Eventure"
         tools:targetApi="31">
         <activity
-            android:name=".ForgotPassword"
+            android:name=".view.ExplorerSignUp"
             android:exported="false" />
         <activity
-            android:name=".Explorer_Login"
+            android:name=".view.ExplorerHome"
             android:exported="false" />
         <activity
-            android:name=".ExplorerLogin"
-            android:exported="false"
-            android:theme="@style/Theme.Eventure" />
-        <activity
-            android:name=".AdminLogin"
+            android:name=".view.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".AccountType"
+            android:name=".view.Explorer_Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.AdminLogin"
+            android:exported="false" />
+        <activity
+            android:name=".view.AccountType"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Eventure" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -6,4 +6,19 @@
     </style>
 
     <style name="Theme.Eventure" parent="Base.Theme.Eventure" />
+    <style name="Theme.Eventure.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Eventure.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Eventure.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="DatePicker_Theme" parent="Theme.Material3.DayNight.Dialog">
+        <item name="colorAccent">@color/primary_orange</item>
+<!--        <item name="android:colorPrimary"></item>-->
+<!--        <item name="colorSecondary">#FF6000</item>-->
+        <item name="colorOnPrimary">@color/primary_orange</item>
+        <item name="colorOnBackground">#FF6000</item>
+        <item name="colorOnContainer">#f18743</item>
+        <item name="color">@color/primary_orange</item>
+    </style>
 </resources>

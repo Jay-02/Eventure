@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Explorer_Login">
+    tools:context=".view.Explorer_Login">
 <ImageView
     android:id="@+id/top_right_blob"
     android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
         android:inputType="textEmailAddress"
         android:paddingHorizontal="25dp"
         android:layout_centerHorizontal="true"
-        android:hint="@string/username"
+        android:hint="@string/explorer_login_username_or_password"
         android:textAlignment="textStart"
         android:background="@drawable/custom_input_orange"
         android:textSize="16sp"
