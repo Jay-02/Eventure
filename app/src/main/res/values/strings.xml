@@ -38,8 +38,10 @@
     <string name="explorer_signup_create_an_account">Create an Account</string>
     <string name="explorer_signup_gender_text_view">Gender</string>
     <string name="explorer_signup_birthdate_text_view">Birthdate</string>
-
-
+<!--Event Organizer Login-->
+    <string name="event_organizer_login_first_prompt">Ready To Create Memorable Experiences?</string>
+    <string name="event_organizer_login_second_prompt">Eventure is your Platform For Creating Unforgettable Experiences</string>
+    <string name="event_organizer_login_username_or_email">Username or Email</string>
 
 
     <string name="title_activity_explorer_home">ExplorerHome</string>
