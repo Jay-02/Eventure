@@ -38,7 +38,7 @@
     <string name="explorer_signup_create_an_account">Create an Account</string>
     <string name="explorer_signup_gender_text_view">Gender</string>
     <string name="explorer_signup_birthdate_text_view">Birthdate</string>
-<!--Event Organizer Login-->
+    <!--Event Organizer Login-->
     <string name="event_organizer_login_first_prompt">Ready To Create Memorable Experiences?</string>
     <string name="event_organizer_login_second_prompt">Eventure is your Platform For Creating Unforgettable Experiences</string>
     <string name="event_organizer_login_username_or_email">Username or Email</string>
@@ -51,8 +51,25 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+    <!--Event Organizer Home-->
     <string name="menu_home">Home</string>
+    <string name="new_event_prompt">Let\'s get your event set up!</string>
+    <string name="new_event_prompt_second_line"> Please fill the form with your event details</string>
+    <string name="event_name_input_hint">Event Name</string>
+    <string name="event_name_description_hint">Event Description</string>
+    <string name="event_name_location_hint">Location</string>
+    <string name="event_age_range">Age</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_event_organizer_home_screen">EventOrganizerHomeScreen</string>
+    <string name="title_new_event">New Event</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_logout">Log out</string>
+
+    <string name="explorer_home_title">Home</string>
+    <string name="explorer_dashboard_title">Dashboard</string>
+    <string name="explorer_profile_title">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

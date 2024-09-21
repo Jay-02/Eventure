@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.EventOrganizerAddEventFragment">
+
+    <ImageView
+        android:id="@+id/top_right_blob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/top_right_blob" />
+
+    <TextView
+        android:id="@+id/add_event_header_prompt_first_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_right_blob"
+        android:layout_centerHorizontal="true"
+        android:text="@string/explorer_login_first_prompt"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/add_event_header_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_event_header_prompt_first_line"
+        android:layout_centerHorizontal="true"
+        android:text="@string/new_event_prompt_second_line"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/add_event_name_input"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/add_event_header_prompt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_green"
+        android:hint="@string/event_name_input_hint"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:id="@+id/add_event_name_description"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/add_event_name_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_input_green"
+        android:hint="@string/event_name_description_hint"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:id="@+id/add_event_location"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/add_event_name_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_input_green"
+        android:hint="@string/event_name_location_hint"
+        android:paddingStart="20dp" />
+
+
+</RelativeLayout>

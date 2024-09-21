@@ -20,6 +20,10 @@ public class ExplorerLoginPresenter implements ExplorerLoginContract.Presenter {
         }
     }
 
+    @Override
+    public void validateLoginCredentials(String username, String password) {
+
+    }
 
 
     @Override

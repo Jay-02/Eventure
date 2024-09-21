@@ -26,11 +26,12 @@
 
     <Button
         android:id="@+id/explorer_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_below="@+id/account_type_text_view"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="80dp"
         android:backgroundTint="@color/primary_orange"
         android:paddingHorizontal="50dp"
         android:text="@string/explorer_button"
@@ -47,8 +48,9 @@
 
     <Button
         android:id="@+id/event_organizer_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="80dp"
         android:layout_below="@+id/or_text_view"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"

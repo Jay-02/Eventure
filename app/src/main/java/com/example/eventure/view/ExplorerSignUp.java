@@ -26,6 +26,8 @@ import com.example.eventure.presenter.ExplorerSignUpPresenter;
 
 public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener, ExplorerSignUpContract.View {
     private ExplorerSignUpPresenter presenter;
+    private String gender;
+    private String date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         EditText password = findViewById(R.id.explorer_signup_password);
         EditText repeatPassword = findViewById(R.id.explorer_signup_repeat_password);
         Button signUpButton = findViewById(R.id.explorer_signup_button);
+
         // Calendar button
         ImageButton calendarButton = findViewById(R.id.explorer_signup_birthdate_button);
         calendarButton.setOnClickListener(new View.OnClickListener() {
@@ -64,12 +67,13 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                String date = String.valueOf(year)+"."+ String.valueOf(month)+"."+String.valueOf(day);
-
+                date = day + "/" + (month + 1) + "/" + year;
             }
 
         });
         datePickerDialog.show();
+
+
     }
 
     @Override
@@ -77,6 +81,8 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         adapterView.getSelectedItem();
         if (adapterView.getSelectedItem().toString().equals("Gender")) {
             showGenderError("Gender Not Selected!");
+        } else if(!adapterView.getSelectedItem().toString().equals("Gender")){
+            gender = adapterView.getSelectedItem().toString();
         }
 
     }

@@ -3,6 +3,7 @@ package com.example.eventure.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -29,6 +30,14 @@ public class EventOrganizerLogin extends AppCompatActivity implements EventOrgan
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Button loginButton = findViewById(R.id.event_organizer_login_button);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToEventOrganizerHome();
+
+            }
+        });
         TextView forgetPasswordButton = findViewById(R.id.event_organizer_login_forgot_password);
         forgetPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +55,7 @@ public class EventOrganizerLogin extends AppCompatActivity implements EventOrgan
 
     @Override
     public void navigateToEventOrganizerHome() {
-
+        startActivity(new Intent(this, EventOrganizerHomeScreen.class));
     }
 
     @Override

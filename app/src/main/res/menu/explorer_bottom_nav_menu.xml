@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/explorer_home_bottom_nav_button"
+        android:icon="@drawable/ic_home"
+        android:title="@string/explorer_home_title" />
+    <item
+        android:id="@+id/explorer_dashboard_bottom_nav_button"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/explorer_dashboard_title" />
+    <item android:id="@+id/explorer_profile_bottom_nav_button"
+        android:icon="@drawable/ic_person"
+        android:title="@string/explorer_profile_title"/>
+    <item android:id="@+id/explorer_logout_bottom_nav_button"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/title_logout"/>
+</menu>
