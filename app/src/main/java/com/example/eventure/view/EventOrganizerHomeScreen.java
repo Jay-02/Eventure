@@ -2,17 +2,16 @@ package com.example.eventure.view;
 
 import android.os.Bundle;
 
-import com.example.eventure.view.fragments.EventOrganizerAddEventFragment;
-import com.example.eventure.view.fragments.EventOrganizerProfileFragment;
-import com.example.eventure.view.fragments.EventOrganizerDashboardFragment;
-import com.example.eventure.R;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.eventure.R;
 import com.example.eventure.databinding.ActivityEventOrganizerHomeScreenBinding;
+import com.example.eventure.view.fragments.EventOrganizerAddEventFragment;
+import com.example.eventure.view.fragments.EventOrganizerDashboardFragment;
+import com.example.eventure.view.fragments.EventOrganizerProfileFragment;
 
 public class EventOrganizerHomeScreen extends AppCompatActivity {
 

@@ -1,7 +1,6 @@
 package com.example.eventure.view;
 
 import android.app.DatePickerDialog;
-import android.media.ImageReader;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
@@ -23,6 +22,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.eventure.R;
 import com.example.eventure.model.contract.ExplorerSignUpContract;
 import com.example.eventure.presenter.ExplorerSignUpPresenter;
+
+import java.util.Calendar;
 
 public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener, ExplorerSignUpContract.View {
     private ExplorerSignUpPresenter presenter;
@@ -46,11 +47,10 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         spinner.setDropDownVerticalOffset((int) pixels);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        EditText username = findViewById(R.id.explorer_signup_username);
-//        SusernameText
-        EditText email = findViewById(R.id.explorer_signup_email);
-        EditText password = findViewById(R.id.explorer_signup_password);
-        EditText repeatPassword = findViewById(R.id.explorer_signup_repeat_password);
+        EditText usernameInput = findViewById(R.id.explorer_signup_username);
+        EditText emailInput = findViewById(R.id.explorer_signup_email);
+        EditText passwordInput = findViewById(R.id.explorer_signup_password);
+        EditText repeatPasswordInput = findViewById(R.id.explorer_signup_repeat_password);
         Button signUpButton = findViewById(R.id.explorer_signup_button);
 
         // Calendar button
@@ -68,6 +68,9 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 date = day + "/" + (month + 1) + "/" + year;
+                if (Calendar.getInstance().get(Calendar.YEAR) - year <18){
+                    birthdateNotValid("You are too young to sign up!");
+                }
             }
 
         });
