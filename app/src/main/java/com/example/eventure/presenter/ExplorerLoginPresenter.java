@@ -9,26 +9,21 @@ public class ExplorerLoginPresenter implements ExplorerLoginContract.Presenter {
         this.view = view;
     }
 
-
-
     @Override
-    public void handleLogin(String email, String password) {
-        if (email.equals("admin") && password.equals("admin")) {
-            view.navigateToExplorerHome();  // On successful login, navigate to home
+    public boolean validateLoginCredentials(String username, String password) {
+        if (username.isEmpty() || username.equals("")) {
+            view.showLoginError("Please enter your username");
+            return false;
+        } else if (password.equals("") || password.isEmpty()) {
+            view.showLoginError("Please enter your Password");
+            return false;
         } else {
-            view.showLoginError("Invalid username or password");
+            return true;
         }
     }
 
     @Override
-    public void validateLoginCredentials(String username, String password) {
-
-    }
-
-
-    @Override
     public void onDestroy() {
-        view = null;
 
     }
 }

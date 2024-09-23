@@ -13,5 +13,6 @@
         android:title="@string/explorer_profile_title"/>
     <item android:id="@+id/explorer_logout_bottom_nav_button"
         android:icon="@drawable/ic_logout"
+        android:onClick="signOut"
         android:title="@string/title_logout"/>
 </menu>

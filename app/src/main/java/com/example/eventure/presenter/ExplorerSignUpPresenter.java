@@ -2,9 +2,7 @@ package com.example.eventure.presenter;
 
 import android.util.Patterns;
 
-import com.example.eventure.model.contract.ExplorerLoginContract;
 import com.example.eventure.model.contract.ExplorerSignUpContract;
-import com.example.eventure.model.database.DatabaseHelper;
 
 import java.util.Objects;
 
