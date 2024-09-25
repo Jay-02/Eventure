@@ -33,7 +33,7 @@ public class Explorer_Login extends AppCompatActivity implements ExplorerLoginCo
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+    if(currentUser != null){
             navigateToExplorerHome();
         }
     }
@@ -92,13 +92,10 @@ public class Explorer_Login extends AppCompatActivity implements ExplorerLoginCo
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             startActivity(new Intent(getApplicationContext(), ExplorerHome.class));
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(Explorer_Login.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
                             showLoginError("Wrong Email or password");
 
                         }
