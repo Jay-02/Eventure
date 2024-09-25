@@ -15,7 +15,7 @@ public class ExplorerSignUpPresenter implements ExplorerSignUpContract.Presenter
     }
 
     @Override
-    public void validateInput(String username, String email, String password, String reEnterPassword, String gender, String birthdate) {
+    public boolean validateInput(String username, String email, String password, String reEnterPassword, String gender, String birthdate) {
         boolean isValid = true;
         if(username == null || username.isEmpty() || username.length()<5){
             view.showUsernameError("Username not valid");
@@ -44,8 +44,7 @@ public class ExplorerSignUpPresenter implements ExplorerSignUpContract.Presenter
             view.birthdateNotValid("Date not valid");
             isValid=false;
         }
-        if (isValid){
-            view.showSignUpSuccess();
-        }
+
+        return isValid;
     }
 }

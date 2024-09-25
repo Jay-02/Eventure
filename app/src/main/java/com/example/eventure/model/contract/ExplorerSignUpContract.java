@@ -17,9 +17,11 @@ public interface ExplorerSignUpContract {
 
         void birthdateNotValid(String errorMessage);
 
-        void showSignUpSuccess();
+        void showSignUpSuccess(String message);
 
-        void showSignUpFailure();
+        void showSignUpFailure(String message);
+
+        void signUp(String email, String password);
 
 
 
@@ -27,7 +29,7 @@ public interface ExplorerSignUpContract {
 
     interface Presenter {
         void onSignUpClicked(String username, String email, String password, String reEnterPassword, String gender, String birthdate);
-        void validateInput(String username, String email, String password, String reEnterPassword, String gender, String birthdate);
+        boolean validateInput(String username, String email, String password, String reEnterPassword, String gender, String birthdate);
 
     }
 }
