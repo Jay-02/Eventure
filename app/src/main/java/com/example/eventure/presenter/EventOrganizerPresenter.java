@@ -1,11 +1,11 @@
 package com.example.eventure.presenter;
 
-import com.example.eventure.model.contract.EventOrganizerContract;
+import com.example.eventure.model.contract.EventOrganizerLoginContract;
 
-public class EventOrganizerPresenter implements EventOrganizerContract.Presenter {
-    private final EventOrganizerContract.View view;
+public class EventOrganizerPresenter implements EventOrganizerLoginContract.Presenter {
+    private final EventOrganizerLoginContract.View view;
 
-    public EventOrganizerPresenter(EventOrganizerContract.View view){
+    public EventOrganizerPresenter(EventOrganizerLoginContract.View view){
         this.view = view;
     }
 
