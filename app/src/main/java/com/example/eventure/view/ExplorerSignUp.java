@@ -182,7 +182,7 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void signUp(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
