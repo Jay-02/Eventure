@@ -1,6 +1,8 @@
 package com.example.eventure.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,7 @@ import com.example.eventure.databinding.ActivityEventOrganizerHomeScreenBinding;
 import com.example.eventure.view.fragments.EventOrganizerAddEventFragment;
 import com.example.eventure.view.fragments.EventOrganizerDashboardFragment;
 import com.example.eventure.view.fragments.EventOrganizerProfileFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class EventOrganizerHomeScreen extends AppCompatActivity {
 
@@ -38,5 +41,11 @@ public class EventOrganizerHomeScreen extends AppCompatActivity {
         fragmentTransaction.replace(R.id.bottom_nav_frame, fragment);
         fragmentTransaction.commit();
     }
+    public void signOut(MenuItem item) {
+        if (item.getItemId() == R.id.event_organizer_logout_button) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(), EventOrganizerLogin.class));
 
+        }
+    }
 }

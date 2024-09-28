@@ -43,39 +43,36 @@ public class EventOrganizerLogin extends AppCompatActivity implements EventOrgan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventOrganizerPresenter presenter = new EventOrganizerPresenter(this);
-        mAuth = FirebaseAuth.getInstance();
-        Button loginButton = findViewById(R.id.event_organizer_login_button);
-        goToSignUp = findViewById(R.id.event_organizer_login_create_an_account);
-        goToSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navigateToSignUp();
-            }
-        });
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navigateToEventOrganizerHome();
 
-            }
-        });
-        TextView forgetPasswordButton = findViewById(R.id.event_organizer_login_forgot_password);
-        forgetPasswordButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navigateToForgotPassword();
-            }
-        });
 
 
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_event_organizer_login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+            mAuth = FirebaseAuth.getInstance();
+            Button loginButton = findViewById(R.id.event_organizer_login_button);
+            goToSignUp = findViewById(R.id.event_organizer_login_create_an_account);
+            goToSignUp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    navigateToSignUp();
+                }
+            });
+            loginButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    navigateToEventOrganizerHome();
+
+                }
+            });
+            TextView forgetPasswordButton = findViewById(R.id.event_organizer_login_forgot_password);
+            forgetPasswordButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    navigateToForgotPassword();
+                }
+            });
+
     }
 
 

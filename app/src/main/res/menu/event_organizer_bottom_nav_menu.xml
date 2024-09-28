@@ -12,6 +12,8 @@
         android:icon="@drawable/ic_profile"/>
     <item android:id="@+id/event_organizer_logout_button"
         android:title="@string/title_logout"
-        android:icon="@drawable/ic_logout"/>
+        android:icon="@drawable/ic_logout"
+        android:onClick="signOut"
+        />
 <!--    TODO: ADD LOGOOUT FUNCTIONALITY TO THIS BUTTON-->
 </menu>
