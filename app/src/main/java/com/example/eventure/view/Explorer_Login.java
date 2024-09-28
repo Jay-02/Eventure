@@ -32,6 +32,7 @@ public class Explorer_Login extends AppCompatActivity implements ExplorerLoginCo
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
     if(currentUser != null){
+        currentUser = null;
             navigateToExplorerHome();
         }
     }
