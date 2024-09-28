@@ -32,12 +32,11 @@ public class EventOrganizerLogin extends AppCompatActivity implements EventOrgan
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            navigateToEventOrganizerHome();
+            currentUser = null;
         }
     }
     EditText usernameInput;
     EditText passwordInput;
-    TextView forgotPassword;
     TextView goToSignUp;
 
     @Override
