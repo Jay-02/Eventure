@@ -16,7 +16,6 @@ import com.example.eventure.view.fragments.EventOrganizerDashboardFragment;
 import com.example.eventure.view.fragments.EventOrganizerProfileFragment;
 import com.example.eventure.view.fragments.ExplorerHomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class ExplorerHome extends AppCompatActivity {
 

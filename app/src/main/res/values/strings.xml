@@ -42,7 +42,17 @@
     <string name="event_organizer_login_first_prompt">Ready To Create Memorable Experiences?</string>
     <string name="event_organizer_login_second_prompt">Eventure is your Platform For Creating Unforgettable Experiences</string>
     <string name="event_organizer_login_username_or_email">Username or Email</string>
-
+    <!--Event Organizer Signup-->
+    <string name="event_organizer_header">Sign Up</string>
+    <string name="event_organizer_prompt_first_line">Sign up to join our community of Event Organizer</string>
+    <string name="event_organizer_prompt_second_line">Start organizing and managing events</string>
+    <string name="username_hint">Username</string>
+    <string name="email_hint">Enter your Email</string>
+    <string name="password_hint">Create your Password</string>
+    <string name="rpt_password_hint">Re-type Password</string>
+    <string name="contact_number_hint">Contact Number</string>
+    <string name="organization_government_id_hint">Organization Government ID</string>
+    <string name="event_organizer_signup_create_an_account">Create an Account</string>
 
     <string name="title_activity_explorer_home">ExplorerHome</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

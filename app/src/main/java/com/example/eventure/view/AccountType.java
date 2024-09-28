@@ -32,23 +32,21 @@ public class AccountType extends AppCompatActivity {
     admin_login_button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(AccountType.this, AdminLogin.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), AdminLogin.class));
         }
     });
     Button organizer_button = findViewById(R.id.event_organizer_button);
     organizer_button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            startActivity(new Intent(AccountType.this, EventOrganizerLogin.class));
+            startActivity(new Intent(getApplicationContext(), EventOrganizerLogin.class));
         }
     });
         Button explorer_button = findViewById(R.id.explorer_button);
         explorer_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AccountType.this, Explorer_Login.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), Explorer_Login.class));
             }
         });
     }

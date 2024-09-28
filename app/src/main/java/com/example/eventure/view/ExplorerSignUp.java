@@ -90,9 +90,7 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View view) {
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
-//                if (
-//                presenter.validateInput(usernameInput.getText().toString(), emailInput.getText().toString(), passwordInput.getText().toString(), repeatPasswordInput.getText().toString(),gender,date)
-//                ){
+
                     signUp(email, password);
 //                }
             }
