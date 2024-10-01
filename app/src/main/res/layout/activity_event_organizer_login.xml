@@ -42,7 +42,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/event_organizer_login_asset"/>
     <EditText
-        android:id="@+id/event_organizer_username_edit_text"
+        android:id="@+id/event_organizer_login_username_input"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:layout_below="@id/event_organizer_login_asset"
@@ -58,10 +58,10 @@
 
         />
     <EditText
-        android:id="@+id/event_organizer_password"
+        android:id="@+id/event_organizer_login_password_input"
         android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_below="@id/event_organizer_username_edit_text"
+        android:layout_below="@id/event_organizer_login_username_input"
         android:layout_marginTop="10dp"
         android:autofillHints="Password"
         android:inputType="textPassword"
@@ -79,7 +79,7 @@
         android:layout_marginVertical="10dp"
         android:focusable="true"
         android:textAlignment="textStart"
-        android:layout_below="@id/event_organizer_password"
+        android:layout_below="@id/event_organizer_login_password_input"
         android:layout_marginTop="5dp"
         android:text="@string/forgot_your_password"
         android:clickable="true"

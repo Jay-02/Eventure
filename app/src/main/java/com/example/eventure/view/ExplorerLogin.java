@@ -21,7 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Explorer_Login extends AppCompatActivity implements ExplorerLoginContract.View {
+public class ExplorerLogin extends AppCompatActivity implements ExplorerLoginContract.View {
     private static final String TAG = "ExplorerLogin";
     private EditText emailInput;
     private EditText passwordInput;
@@ -33,7 +33,6 @@ public class Explorer_Login extends AppCompatActivity implements ExplorerLoginCo
         FirebaseUser currentUser = mAuth.getCurrentUser();
     if(currentUser != null){
         currentUser = null;
-            navigateToExplorerHome();
         }
     }
 
@@ -92,8 +91,9 @@ public class Explorer_Login extends AppCompatActivity implements ExplorerLoginCo
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(getApplicationContext(), ExplorerHome.class));
+                            navigateToExplorerHome();
                         } else {
+
                             // If sign in fails, display a message to the user.
                             showLoginError("Wrong Email or password");
 

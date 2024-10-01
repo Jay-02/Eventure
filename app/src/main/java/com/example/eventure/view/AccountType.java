@@ -46,7 +46,7 @@ public class AccountType extends AppCompatActivity {
         explorer_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Explorer_Login.class));
+                startActivity(new Intent(getApplicationContext(), ExplorerLogin.class));
             }
         });
     }

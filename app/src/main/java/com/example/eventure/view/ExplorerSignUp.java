@@ -29,6 +29,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 
@@ -38,6 +39,9 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
     EditText passwordInput;
     EditText emailInput;
     FirebaseAuth mAuth;
+    FirebaseFirestore db;
+    String username;
+    String rptPassword;
     @Override
     public void onStart() {
         super.onStart();
@@ -77,6 +81,10 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
         repeatPasswordInput = findViewById(R.id.explorer_signup_repeat_password);
         Button signUpButton = findViewById(R.id.explorer_signup_button);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+
+        presenter = new ExplorerSignUpPresenter(this);
         // Calendar button
         ImageButton calendarButton = findViewById(R.id.explorer_signup_birthdate_button);
         calendarButton.setOnClickListener(new View.OnClickListener() {
@@ -90,8 +98,11 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View view) {
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
-
-                    signUp(email, password);
+                rptPassword =repeatPasswordInput.getText().toString();
+                username = usernameInput.getText().toString();
+                    if(presenter.validateInput(username, email, password, rptPassword, gender, date)) {
+                        signUp(email, password);
+                    }
 //                }
             }
         });
@@ -134,13 +145,13 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void showGenderError(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         //TODO: Might Change the outline of the field to red
     }
 
     @Override
     public void showUsernameError(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -188,13 +199,31 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            navigateUpTo(new Intent(getApplicationContext(), ExplorerHome.class));
+                            assert user != null;
+                            presenter.handleExtraInformation(mAuth, db, user, username,date, gender );
+                            navigateToExplorerHome();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "something", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "error with db", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+
+    @Override
+    public void showFirebaseSuccess(String userInfoAdded) {
+        Toast.makeText(getApplicationContext(), userInfoAdded, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showFirebaseFailure(String FirebaseError) {
+        Toast.makeText(getApplicationContext(), FirebaseError, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void navigateToExplorerHome() {
+        startActivity(new Intent(getApplicationContext(), ExplorerHome.class));
+    }
+
 }
 

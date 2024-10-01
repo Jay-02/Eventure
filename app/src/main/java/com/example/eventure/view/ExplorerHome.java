@@ -47,7 +47,7 @@ public class ExplorerHome extends AppCompatActivity {
     public void signOut(MenuItem item) {
         if (item.getItemId() == R.id.explorer_logout_bottom_nav_button) {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), Explorer_Login.class));
+            startActivity(new Intent(getApplicationContext(), ExplorerLogin.class));
 
         }
     }
