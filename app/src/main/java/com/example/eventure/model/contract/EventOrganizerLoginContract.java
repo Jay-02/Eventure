@@ -9,7 +9,7 @@ public interface EventOrganizerLoginContract {
         void signIn(String email, String password);
     }
     interface Presenter{
-        void handleLogin(String username, String password);
+        boolean handleLogin(String username, String password);
         void onDestroy();
     }
 }

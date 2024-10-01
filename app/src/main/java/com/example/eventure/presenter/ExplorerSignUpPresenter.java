@@ -2,13 +2,22 @@ package com.example.eventure.presenter;
 
 import android.util.Patterns;
 
-import com.example.eventure.model.contract.ExplorerSignUpContract;
+import androidx.annotation.NonNull;
 
+import com.example.eventure.model.contract.ExplorerSignUpContract;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class ExplorerSignUpPresenter implements ExplorerSignUpContract.Presenter {
     private ExplorerSignUpContract.View view;
-    public ExplorerSignUpPresenter(ExplorerSignUpContract.View view){view = this.view;}
+    public ExplorerSignUpPresenter(ExplorerSignUpContract.View view){this.view = view;}
     @Override
     public void onSignUpClicked(String username, String email, String password, String reEnterPassword, String gender, String birthdate) {
         validateInput(username,email,password,reEnterPassword,gender,birthdate);
@@ -46,5 +55,27 @@ public class ExplorerSignUpPresenter implements ExplorerSignUpContract.Presenter
         }
 
         return isValid;
+    }
+
+    @Override
+    public void handleExtraInformation(FirebaseAuth mAuth, FirebaseFirestore db, FirebaseUser user, String username, String gender, String birthdate) {
+        Map<String, Object> organizers = new HashMap<>();
+        organizers.put("username", username);
+        organizers.put("birthdate",birthdate );
+        organizers.put("gender", gender);
+        db.collection("Explorers").document(user.getUid())
+                .set(organizers)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        view.showFirebaseSuccess("User Info Added");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        view.showFirebaseFailure("Error Occurred" + e);
+                    }
+                });
     }
 }

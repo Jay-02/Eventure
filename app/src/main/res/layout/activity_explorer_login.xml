@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Explorer_Login">
+    tools:context=".view.ExplorerLogin">
 <ImageView
     android:id="@+id/top_right_blob"
     android:layout_width="wrap_content"

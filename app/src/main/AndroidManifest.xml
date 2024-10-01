@@ -34,7 +34,7 @@
             android:name=".view.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".view.Explorer_Login"
+            android:name=".view.ExplorerLogin"
             android:exported="false" />
         <activity
             android:name=".view.AdminLogin"

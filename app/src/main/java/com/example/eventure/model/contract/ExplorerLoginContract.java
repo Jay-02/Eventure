@@ -9,6 +9,7 @@ public interface ExplorerLoginContract {
         void navigateToExplorerSignUp();
         void navigateToForgotPassword();
 
+
     }
     interface Presenter{
         boolean validateLoginCredentials(String username, String password);
