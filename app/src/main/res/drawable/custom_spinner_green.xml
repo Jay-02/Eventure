@@ -8,10 +8,10 @@
                     <solid android:color="@color/light_gray" />
                     <padding android:left="12dp" android:right="12dp" />
                     <corners android:radius="40dp" />
-                    <stroke android:width="2dp" android:color="@color/primary_orange" />
+                    <stroke android:width="2dp" android:color="@color/dark_green" />
                 </shape>
             </item>
-            <item android:drawable="@drawable/calendar" android:gravity="center" />
+            <item android:drawable="@drawable/ic_filled_downward_facing_arrow" android:gravity="end" />
         </layer-list>
     </item>
 
@@ -25,7 +25,7 @@
                     <stroke />
                 </shape>
             </item>
-            <item android:drawable="@drawable/calendar" android:gravity="center" android:height="48dp" android:width="48dp"/>
+            <item android:drawable="@drawable/ic_filled_downward_facing_arrow" android:gravity="end"/>
         </layer-list>
     </item>
 </selector>

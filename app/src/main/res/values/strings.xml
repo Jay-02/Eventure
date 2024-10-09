@@ -62,13 +62,19 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <!--Event Organizer Home-->
+        <!--Event Organizer New Event Fragment-->
     <string name="menu_home">Home</string>
     <string name="new_event_prompt">Let\'s get your event set up!</string>
     <string name="new_event_prompt_second_line"> Please fill the form with your event details</string>
-    <string name="event_name_input_hint">Event Name</string>
-    <string name="event_name_description_hint">Event Description</string>
-    <string name="event_name_location_hint">Location</string>
-    <string name="event_age_range">Age</string>
+    <string name="new_event_name_input_hint">Event Name</string>
+    <string name="new_event_name_description_hint">Event Description</string>
+    <string name="new_event_name_location_hint">Location</string>
+    <string name="new_event_age_range">Age</string>
+    <string name="new_event_time_range">Time</string>
+    <string name="new_event_ticket_price">Price</string>
+    <string name="new_event_date">Date</string>
+    <string name="new_event_categories">Categories</string>
+    <string name="new_event_submit_button">Submit</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_event_organizer_home_screen">EventOrganizerHomeScreen</string>

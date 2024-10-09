@@ -86,7 +86,7 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
 
         presenter = new ExplorerSignUpPresenter(this);
         // Calendar button
-        ImageButton calendarButton = findViewById(R.id.explorer_signup_birthdate_button);
+        Button calendarButton = findViewById(R.id.explorer_signup_birthdate_button);
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
