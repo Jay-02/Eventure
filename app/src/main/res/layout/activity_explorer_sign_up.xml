@@ -144,18 +144,18 @@
         android:backgroundTint="@color/primary_orange"
         android:text="@string/explorer_signup_create_an_account"
         android:textSize="18sp" />
-    <ImageButton
-        android:clickable="true"
-        android:focusable="true"
+    <Button
         android:id="@+id/explorer_signup_birthdate_button"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_toEndOf="@id/explorer_signup_gender_spinner"
         android:layout_below="@id/explorer_signup_birthdate_text_view"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="10dp"
         android:textColor="@color/black"
-        android:background="@drawable/custom_calendar_button"
+        android:backgroundTint="@color/light_gray"
+        android:text="@string/explorer_signup_birthdate_text_view"
+        android:drawableEnd="@drawable/ic_calendar"
 
         />
 </RelativeLayout>

@@ -41,30 +41,100 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_input_green"
-        android:hint="@string/event_name_input_hint"
+        android:hint="@string/new_event_name_input_hint"
         android:paddingStart="20dp" />
 
     <EditText
-        android:id="@+id/add_event_name_description"
+        android:id="@+id/add_event_name_description_input"
         android:layout_width="280dp"
         android:layout_height="60dp"
         android:layout_below="@id/add_event_name_input"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/custom_input_green"
-        android:hint="@string/event_name_description_hint"
+        android:hint="@string/new_event_name_description_hint"
         android:paddingStart="20dp" />
 
     <EditText
-        android:id="@+id/add_event_location"
+        android:id="@+id/add_event_location_input"
         android:layout_width="280dp"
         android:layout_height="60dp"
-        android:layout_below="@id/add_event_name_description"
+        android:layout_below="@id/add_event_name_description_input"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/custom_input_green"
-        android:hint="@string/event_name_location_hint"
+        android:hint="@string/new_event_name_location_hint"
         android:paddingStart="20dp" />
 
+    <EditText
+        android:id="@+id/add_event_age_input"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/add_event_location_input"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="70dp"
+        android:background="@drawable/custom_input_green"
+        android:textAlignment="center"
+        android:hint="@string/new_event_age_range"/>
+    <Spinner
+        android:id="@+id/new_event_gender_spinner"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_spinner_green"
+        android:layout_below="@id/add_event_location_input"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="220dp"
+        android:paddingStart="20dp" />
+    <EditText
+        android:id="@+id/new_event_time_input"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/add_event_age_input"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="70dp"
+        android:background="@drawable/custom_input_green"
+        android:textAlignment="center"
+        android:hint="@string/new_event_time_range"/>
+    <EditText
+        android:id="@+id/new_event_ticket_price"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_input_green"
+        android:layout_below="@id/new_event_gender_spinner"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="220dp"
+        android:hint="@string/new_event_ticket_price"
+        android:paddingStart="20dp" />
 
+    <Button
+        android:id="@+id/new_event_date_button"
+        android:layout_width="125dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/new_event_time_input"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="70dp"
+        android:backgroundTint="@color/light_gray"
+        android:textAlignment="center"
+        android:hint="@string/new_event_date"
+        android:drawableEnd="@drawable/ic_calendar"
+        />
+    <Spinner
+        android:id="@+id/new_event_categories"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_spinner_green"
+        android:layout_below="@id/new_event_ticket_price"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="220dp"
+        android:paddingStart="20dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="100dp"
+        android:layout_below="@id/new_event_date_button"
+        android:layout_marginTop="30dp"
+        android:text="@string/new_event_submit_button"
+        android:backgroundTint="@color/dark_green"
+        android:textStyle="bold"
+        android:textSize="24dp"/>
 </RelativeLayout>
