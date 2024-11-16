@@ -57,20 +57,21 @@
 
     <EditText
         android:id="@+id/add_event_location_input"
-        android:layout_width="280dp"
+        android:layout_width="125dp"
         android:layout_height="60dp"
         android:layout_below="@id/add_event_name_description_input"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="220dp"
         android:background="@drawable/custom_input_green"
         android:hint="@string/new_event_name_location_hint"
         android:paddingStart="20dp" />
+
 
     <EditText
         android:id="@+id/add_event_age_input"
         android:layout_width="125dp"
         android:layout_height="60dp"
-        android:layout_below="@id/add_event_location_input"
+        android:layout_below="@id/add_event_name_description_input"
         android:layout_marginTop="10dp"
         android:layout_marginStart="70dp"
         android:background="@drawable/custom_input_green"
@@ -78,13 +79,13 @@
         android:hint="@string/new_event_age_range"/>
     <Spinner
         android:id="@+id/new_event_gender_spinner"
-        android:layout_width="125dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
         android:background="@drawable/custom_spinner_green"
-        android:layout_below="@id/add_event_location_input"
+        android:layout_below="@id/new_event_category_spinner"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="220dp"
-        android:paddingStart="20dp" />
+        android:textAlignment="center" />
     <EditText
         android:id="@+id/new_event_time_input"
         android:layout_width="125dp"
@@ -100,11 +101,12 @@
         android:layout_width="125dp"
         android:layout_height="60dp"
         android:background="@drawable/custom_input_green"
-        android:layout_below="@id/new_event_gender_spinner"
+        android:layout_below="@id/add_event_location_input"
         android:layout_marginTop="10dp"
         android:layout_marginStart="220dp"
+        android:textAlignment="center"
         android:hint="@string/new_event_ticket_price"
-        android:paddingStart="20dp" />
+         />
 
     <Button
         android:id="@+id/new_event_date_button"
@@ -118,23 +120,36 @@
         android:hint="@string/new_event_date"
         android:drawableEnd="@drawable/ic_calendar"
         />
-    <Spinner
-        android:id="@+id/new_event_categories"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:background="@drawable/custom_spinner_green"
-        android:layout_below="@id/new_event_ticket_price"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="220dp"
-        android:paddingStart="20dp" />
     <Button
+        android:id="@+id/new_event_image_button"
+        android:layout_width="125dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/new_event_ticket_price"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/light_gray"
+        android:drawableEnd="@drawable/ic_image"
+        android:hint="@string/new_event_image"/>
+
+    <Spinner
+        android:id="@+id/new_event_category_spinner"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/new_event_image_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_spinner_green"
+        android:textAlignment="center"
+ />
+    <Button
+        android:id="@+id/new_event_submit_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginHorizontal="100dp"
-        android:layout_below="@id/new_event_date_button"
+        android:layout_marginHorizontal="60dp"
+        android:layout_below="@id/new_event_gender_spinner"
         android:layout_marginTop="30dp"
         android:text="@string/new_event_submit_button"
         android:backgroundTint="@color/dark_green"
         android:textStyle="bold"
-        android:textSize="24dp"/>
+        android:textSize="24sp"/>
 </RelativeLayout>

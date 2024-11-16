@@ -14,11 +14,16 @@
     <style name="Theme.Eventure.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="DatePicker_Theme" parent="Theme.Material3.DayNight.Dialog">
         <item name="colorAccent">@color/primary_orange</item>
-<!--        <item name="android:colorPrimary"></item>-->
-<!--        <item name="colorSecondary">#FF6000</item>-->
         <item name="colorOnPrimary">@color/primary_orange</item>
         <item name="colorOnBackground">#FF6000</item>
         <item name="colorOnContainer">#f18743</item>
         <item name="color">@color/primary_orange</item>
+    </style>
+    <style name="EventOrganizer_DatePicker_Theme" parent="Theme.Material3.DayNight.Dialog">
+    <item name="colorAccent">@color/dark_green</item>
+    <item name="colorOnPrimary">@color/dark_green</item>
+    <item name="colorOnBackground">@color/dark_green</item>
+    <item name="colorOnContainer">@color/dark_green</item>
+    <item name="color">@color/dark_green</item>
     </style>
 </resources>

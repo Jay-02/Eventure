@@ -32,6 +32,7 @@
     <string name="explorer_signup_password">Create your Password</string>
     <string name="explorer_signup_repeat_password">Re-type Password</string>
     <string-array name="gender_spinner">
+        <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>
@@ -73,7 +74,17 @@
     <string name="new_event_time_range">Time</string>
     <string name="new_event_ticket_price">Price</string>
     <string name="new_event_date">Date</string>
-    <string name="new_event_categories">Categories</string>
+    <string-array name="new_event_categories">
+        <item>Music</item>
+        <item>Art</item>
+        <item>Education</item>
+    </string-array>
+    <string-array name="new_event_gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Male &amp; Female</item>
+    </string-array>
+    <string name="new_event_image">Image</string>
     <string name="new_event_submit_button">Submit</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
