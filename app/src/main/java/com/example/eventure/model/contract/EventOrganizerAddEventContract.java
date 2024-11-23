@@ -6,19 +6,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public interface EventOrganizerAddEventContract {
     interface View {
-        void showEventNameError(String message);
-        void showEventDescriptionError(String message);
-        void showEventLocationError(String message);
-        void showEventAgeRangeError(String message);
-        void showEventGenderSpinnerError(String message);
-        void showEventTimeError(String message);
-        void showEventTicketPriceError(String message);
-        void showEventDateError(String message);
-        void showEventCategorySpinnerError(String message);
+        void showErrorMessage(String message);
         void showEventDateDialog();
         void showDocAddSuccess(String message);
         void showDocAddFailure(String message);
-
+        void navigateToDashboard();
 
     }
     interface Presenter{
