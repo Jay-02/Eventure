@@ -14,20 +14,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddEventFragmentPresenter implements EventOrganizerAddEventContract.Presenter {
+
     private final EventOrganizerAddEventContract.View view;
     public AddEventFragmentPresenter(EventOrganizerAddEventContract.View view){
         this.view = view;
     }
-    private static final String EVENT_NAME_PATTERN = "^[a-zA-Z]+(?:\\s+[a-zA-Z]+)*$";
-    private static final String EVENT_DESCRIPTION_PATTERN ="^(?:[A-Za-z0-9]+[.,!?]?(?:[-']?[A-Za-z0-9]+[.,!?]?)*\\s+){19}[A-Za-z0-9]+[.,!?]?(?:[-']?[A-Za-z0-9]+[.,!?]?)*.*$";
+//    private static final String EVENT_NAME_PATTERN = "^[a-zA-Z]+(?:\\s+[a-zA-Z]+)*$";
+//    private static final String EVENT_DESCRIPTION_PATTERN ="^(?:[A-Za-z0-9]+[.,!?]?(?:[-']?[A-Za-z0-9]+[.,!?]?)*\\s+){19}[A-Za-z0-9]+[.,!?]?(?:[-']?[A-Za-z0-9]+[.,!?]?)*.*$";
     @Override
     public boolean validateInput(String EventName, String EventDescription, String AgeRange, String Location, String Time, String EventTicketPrice, String EventDate, String EventCategories, String AttendeeGender) {
         boolean isValid = true;
-        if(!EventName.matches(EVENT_NAME_PATTERN)) {
+        if(EventName.isEmpty()) {
             isValid = false;
             view.showEventNameError("Event Name is invalid!");
         }
-        if(!EventDescription.matches(EVENT_DESCRIPTION_PATTERN)){
+        if(EventDescription.isEmpty()){
             isValid = false;
             view.showEventDescriptionError("Event Description Needs to be at least 20 words!");
         }
@@ -60,6 +61,7 @@ public class AddEventFragmentPresenter implements EventOrganizerAddEventContract
 
     @Override
     public void handleEventInformation(FirebaseAuth mAuth, FirebaseFirestore db, FirebaseUser user, String EventName, String EventDescription, String AgeRange, String Location, String Time, String EventTicketPrice, String EventDate, String EventCategories, String AttendeeGender) {
+
         Map<String, Object> event = new HashMap<>();
         event.put("eventName", EventName);
         event.put("eventDescription", EventDescription);
@@ -70,12 +72,12 @@ public class AddEventFragmentPresenter implements EventOrganizerAddEventContract
         event.put("eventDate", EventDate);
         event.put("eventCategories", EventCategories);
         event.put("eventAttendeeGender",AttendeeGender);
-        db.collection("PendingEvents").document(user.getUid())
+        db.collection("PendingEvents").document(EventName)
                 .set(event)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        view.showDocAddSuccess("User Info Added");
+                        view.showDocAddSuccess("Event Info Added");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

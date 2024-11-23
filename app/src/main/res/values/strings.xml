@@ -86,6 +86,8 @@
     </string-array>
     <string name="new_event_image">Image</string>
     <string name="new_event_submit_button">Submit</string>
+        <!--Event Organizer Dashboard-->
+    <string name="event_organizer_dashboard_prompt">View and Edit your Events</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_event_organizer_home_screen">EventOrganizerHomeScreen</string>

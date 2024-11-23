@@ -85,19 +85,18 @@ public class EventOrganizerAddEventFragment extends Fragment implements EventOrg
         fragment.setArguments(args);
         return fragment;
     }
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if (currentUser != null) {
-//            currentUser = null;
-//        }
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            currentUser = null;
+        }
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        EventOrganizerLoginPresenter presenter = new EventOrganizerLoginPresenter(contractView);
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -106,7 +105,6 @@ public class EventOrganizerAddEventFragment extends Fragment implements EventOrg
 
         }
     }
-    // The error is because an onclicklistener is added
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -126,25 +124,22 @@ public class EventOrganizerAddEventFragment extends Fragment implements EventOrg
         EventCategorySpinner.setAdapter(categoryAdapter);
         EventCategorySpinner.setOnItemSelectedListener(this);
         EventDateButton.setOnClickListener(this);
-        SubmitEventButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInfo();
-                presenter.handleEventInformation(mAuth,db, user,EventName, EventDescription, EventAgeRange, EventLocation, EventTime, EventTicketPrice, date, eventCategory, eventGender );
-            }
-        });
+
+        SubmitEventButton.setOnClickListener(v ->{
+            EventName = EventNameInput.getText().toString();
+            EventDescription=EventDescriptionInput.getText().toString();
+            EventLocation = EventLocationInput.getText().toString();
+            EventTime= EventTimeInput.getText().toString();
+            EventTicketPrice = EventTicketPriceInput.getText().toString();
+            EventAgeRange = EventAgeRangeInput.getText().toString();
+
+            presenter.handleEventInformation(mAuth,db, user,EventName, EventDescription, EventAgeRange, EventLocation, EventTime, EventTicketPrice, date, eventCategory, eventGender );
+        } );
         return view;
     }
-    private void getInfo(){
-    EventName = EventNameInput.getText().toString();
-    EventDescription=EventDescriptionInput.getText().toString();
-    EventLocation = EventLocationInput.getText().toString();
-    EventTime= EventTimeInput.getText().toString();
-    EventTicketPrice = EventTicketPriceInput.getText().toString();
-    EventAgeRange = EventAgeRangeInput.getText().toString();
-//    user = mAuth.getCurrentUser();
-    }
+
     private void InitializeViews(View view){
+        
         EventCategorySpinner = view.findViewById(R.id.new_event_category_spinner);
         EventDateButton = view.findViewById(R.id.new_event_date_button);
         EventGenderSpinner = view.findViewById(R.id.new_event_gender_spinner);
@@ -157,54 +152,11 @@ public class EventOrganizerAddEventFragment extends Fragment implements EventOrg
         SubmitEventButton = view.findViewById(R.id.new_event_submit_button);
         UplaodImageButton = view.findViewById(R.id.new_event_image_button);
         presenter = new AddEventFragmentPresenter(contractView);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        db  = FirebaseFirestore.getInstance();
 
     }
-    @Override
-    public void showEventNameError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventDescriptionError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventLocationError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventAgeRangeError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventGenderSpinnerError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventTimeError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventTicketPriceError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void showEventDateError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showEventCategorySpinnerError(String message) {
-        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     public void showEventDateDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(requireView().getContext(), R.style.EventOrganizer_DatePicker_Theme);
@@ -212,14 +164,15 @@ public class EventOrganizerAddEventFragment extends Fragment implements EventOrg
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 date = day + "/" + (month + 1) + "/" + year;
-                Toast.makeText(getContext(), date, Toast.LENGTH_LONG).show();
-//                if (Calendar.getInstance().get(Calendar.YEAR) - year < 18) {
-//                    birthdateNotValid("You are too young to sign up!");
-//                }
             }
 
         });
         datePickerDialog.show();
+    }
+
+    @Override
+    public void showErrorMessage(String message) {
+        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -233,21 +186,28 @@ public class EventOrganizerAddEventFragment extends Fragment implements EventOrg
     }
 
     @Override
+    public void navigateToDashboard() {
+
+    }
+
+    @Override
     public void onClick(View view) {
         showEventDateDialog();
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        eventGender = adapterView.getSelectedItem().toString();
-        eventCategory = adapterView.getSelectedItem().toString();
+        if(adapterView.getId() == R.id.new_event_gender_spinner){
+        eventGender = adapterView.getSelectedItem().toString();}
+        if(adapterView.getId() == R.id.new_event_category_spinner){
+        eventCategory = adapterView.getSelectedItem().toString();}
         Toast.makeText(view.getContext(), adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         if(adapterView.getSelectedItem() == null){
-            showEventGenderSpinnerError("You have to select the gender of attendees");
+            showErrorMessage("You have to select the gender of attendees");
         }
 
     }

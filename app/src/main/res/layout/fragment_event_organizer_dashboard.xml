@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.EventOrganizerDashboardFragment">
+ tools:context=".view.fragments.EventOrganizerDashboardFragment">
 
+    <ImageView
+    android:id="@+id/top_right_blob"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginTop="0dp"
+    android:layout_marginEnd="4dp"
+    android:src="@drawable/top_right_blob" />
+    <TextView
+        android:id="@+id/event_organizer_dashboard_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_organizer_dashboard_prompt"
+        android:textAlignment="center"
+        android:layout_below="@id/top_right_blob"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
 
-
-
-</FrameLayout>
+</RelativeLayout>
