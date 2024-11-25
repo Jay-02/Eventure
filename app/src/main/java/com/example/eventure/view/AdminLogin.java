@@ -39,13 +39,14 @@ public class AdminLogin extends AppCompatActivity implements AdminLoginContract.
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            AdminUsernameInput =findViewById(R.id.admin_username_edit_text);
-            AdminPasswordInput = findViewById(R.id.admin_password_edit_text);
-            AdminLoginButton = findViewById(R.id.admin_login_button);
-            mAuth = FirebaseAuth.getInstance();
-            presenter = new AdminLoginPresenter(this);
+
             return insets;
         });
+        AdminUsernameInput =findViewById(R.id.admin_username_edit_text);
+        AdminPasswordInput = findViewById(R.id.admin_password_edit_text);
+        AdminLoginButton = findViewById(R.id.admin_login_button);
+        mAuth = FirebaseAuth.getInstance();
+        presenter = new AdminLoginPresenter(this);
         AdminLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
