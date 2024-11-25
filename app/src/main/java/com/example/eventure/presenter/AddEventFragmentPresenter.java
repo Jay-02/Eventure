@@ -26,35 +26,35 @@ public class AddEventFragmentPresenter implements EventOrganizerAddEventContract
         boolean isValid = true;
         if(EventName.isEmpty()) {
             isValid = false;
-            view.showEventNameError("Event Name is invalid!");
+//            view.showEventNameError("Event Name is invalid!");
         }
         if(EventDescription.isEmpty()){
             isValid = false;
-            view.showEventDescriptionError("Event Description Needs to be at least 20 words!");
+//            view.showEventDescriptionError("Event Description Needs to be at least 20 words!");
         }
         if(AgeRange.equals("")){
             isValid = false;
-            view.showEventAgeRangeError("Age is invalid");
+//            view.showEventAgeRangeError("Age is invalid");
         }
 //        need to implement location error handling when adding google maps api
         if(Time.equals("")){
-            view.showEventTimeError("You need to specify the Time of the Event");
+//            view.showEventTimeError("You need to specify the Time of the Event");
             isValid = false;
         }
         if (EventTicketPrice.equals("")){
-            view.showEventTicketPriceError("You need to specify A ticket price");
+//            view.showEventTicketPriceError("You need to specify A ticket price");
         }
         if(EventDate.equals("")){
             isValid = false;
-            view.showEventDateError("Event date invalid");
+//            view.showEventDateError("Event date invalid");
         }
         if(EventCategories.equals(null)){
             isValid = false;
-            view.showEventCategorySpinnerError("You need to specify the category of your event");
+//            view.showEventCategorySpinnerError("You need to specify the category of your event");
         }
         if (AttendeeGender.equals(null)){
             isValid = false;
-            view.showEventGenderSpinnerError("You need to specify who your targeted audience is");
+//            view.showEventGenderSpinnerError("You need to specify who your targeted audience is");
         }
         return isValid;
     }
