@@ -63,7 +63,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <!--Event Organizer Home-->
-        <!--Event Organizer New Event Fragment-->
+    <!--Event Organizer New Event Fragment-->
     <string name="menu_home">Home</string>
     <string name="new_event_prompt">Let\'s get your event set up!</string>
     <string name="new_event_prompt_second_line"> Please fill the form with your event details</string>
@@ -86,7 +86,7 @@
     </string-array>
     <string name="new_event_image">Image</string>
     <string name="new_event_submit_button">Submit</string>
-        <!--Event Organizer Dashboard-->
+    <!--Event Organizer Dashboard-->
     <string name="event_organizer_dashboard_prompt">View and Edit your Events</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
