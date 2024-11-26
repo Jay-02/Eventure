@@ -15,6 +15,10 @@
         android:theme="@style/Theme.Eventure"
         tools:targetApi="31">
         <activity
+            android:name=".view.AdminHome"
+            android:exported="false"
+            android:label="@string/title_activity_admin_home" />
+        <activity
             android:name=".view.EventOrganizerSignUp"
             android:exported="false" />
         <activity
