@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.eventure.R;
 import com.example.eventure.model.contract.AdminLoginContract;
 import com.example.eventure.presenter.AdminLoginPresenter;
+import com.example.eventure.view.fragments.AdminDashboardFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -69,7 +70,7 @@ public class AdminLogin extends AppCompatActivity implements AdminLoginContract.
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-//                    startActivity(new Intent(getApplicationContext(), AdminHomeFragment.class));
+                    startActivity(new Intent(getApplicationContext(), AdminHome.class));
                 }
                 else {
                     ShowErrorMessage("Login Failed!");
