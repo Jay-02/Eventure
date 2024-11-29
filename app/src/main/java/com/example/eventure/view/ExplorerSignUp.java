@@ -3,6 +3,7 @@ package com.example.eventure.view;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
@@ -102,6 +103,8 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
                 username = usernameInput.getText().toString();
                     if(presenter.validateInput(username, email, password, rptPassword, gender, date)) {
                         signUp(email, password);
+                        Log.w("waiting","waiting to create account");
+
                     }
 //                }
             }
@@ -198,6 +201,7 @@ public class ExplorerSignUp extends AppCompatActivity implements AdapterView.OnI
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            Log.w("success","successfully create account");
                             FirebaseUser user = mAuth.getCurrentUser();
                             assert user != null;
                             presenter.handleExtraInformation(mAuth, db, user, username,date, gender );

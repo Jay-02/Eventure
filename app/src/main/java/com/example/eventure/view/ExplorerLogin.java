@@ -110,6 +110,7 @@ public class ExplorerLogin extends AppCompatActivity implements ExplorerLoginCon
     @Override
     public void navigateToExplorerHome() {
         startActivity(new Intent(getApplicationContext(), ExplorerHome.class));
+
     }
 
     @Override
