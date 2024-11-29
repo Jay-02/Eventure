@@ -2,6 +2,7 @@ package com.example.eventure.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
@@ -15,6 +16,7 @@ import com.example.eventure.databinding.ActivityExplorerHomeBinding;
 import com.example.eventure.view.fragments.EventOrganizerDashboardFragment;
 import com.example.eventure.view.fragments.EventOrganizerProfileFragment;
 import com.example.eventure.view.fragments.ExplorerHomeFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ExplorerHome extends AppCompatActivity {
@@ -24,17 +26,38 @@ public class ExplorerHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_explorer_home);
-        ActivityExplorerHomeBinding binding = ActivityExplorerHomeBinding.inflate(getLayoutInflater());
-        replaceFragment(new ExplorerHomeFragment());
-        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.explorer_home_bottom_nav_button) {
-                replaceFragment(new ExplorerHomeFragment());
-            } else if (item.getItemId() == R.id.dashboard_bottom_nav_button) {
-                replaceFragment(new EventOrganizerDashboardFragment());
-            } else if (item.getItemId() == R.id.profile_bottom_nav_profile_button) {
-                replaceFragment(new EventOrganizerProfileFragment());
+      //  ActivityExplorerHomeBinding binding = ActivityExplorerHomeBinding.inflate(getLayoutInflater());
+      //  replaceFragment(new ExplorerHomeFragment());
+      //  binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+      //      if (item.getItemId() == R.id.explorer_home_bottom_nav_button) {
+      //          replaceFragment(new ExplorerHomeFragment());
+      //      } else if (item.getItemId() == R.id.dashboard_bottom_nav_button) {
+      //          replaceFragment(new EventOrganizerDashboardFragment());
+      //      } else if (item.getItemId() == R.id.profile_bottom_nav_profile_button) {
+      //          Log.w("profile","new profile activity");
+      //          startActivity(new Intent(this, ExplorerProfile.class));
+      //          overridePendingTransition(0, 0);            }
+      //      return true;
+      //  });
+        BottomNavigationView navBar = findViewById(R.id.bottom_navigation_view);
+        navBar.setSelectedItemId(R.id.explorer_home_bottom_nav_button);
+        navBar.setOnNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.explorer_profile_bottom_nav_button) {
+                startActivity(new Intent(this, ExplorerProfile.class));
+                overridePendingTransition(0, 0);
             }
-            return true;
+            if (item.getItemId() == R.id.explorer_home_bottom_nav_button) {
+
+            }
+            if (item.getItemId() == R.id.explorer_logout_bottom_nav_button) {
+                FirebaseAuth auth= FirebaseAuth.getInstance();
+                auth.signOut();
+                startActivity(new Intent(this, ExplorerLogin.class));
+                overridePendingTransition(0, 0);
+
+            }
+
+            return false;
         });
     }
     private void replaceFragment(Fragment fragment){

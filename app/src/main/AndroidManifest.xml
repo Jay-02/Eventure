@@ -46,6 +46,7 @@
         <activity
             android:name=".view.AccountType"
             android:exported="false" />
+        <activity android:name=".view.ExplorerProfile" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
@@ -54,6 +55,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
     </application>
 
