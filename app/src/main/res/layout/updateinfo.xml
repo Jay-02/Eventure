@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".update_info">
+
+        <!-- Header Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/profileSection">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:background="#FFA500"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8sp">
+
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Back Button"
+                    android:src="@drawable/double_arrow_left_24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Profile Section -->
+        <LinearLayout
+            android:id="@+id/profileSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!-- Profile Picture -->
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Profile Picture"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    />
+
+                <!-- Change Picture Button -->
+                <Button
+                    android:id="@+id/changePictureButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFA500"
+                    android:drawableLeft="@drawable/ic_edit"
+                    android:text="Change Picture"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- User Info Fields -->
+            <EditText
+                android:id="@+id/usernameField"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"
+                android:background="@drawable/border_radius_white"
+                android:hint="Username" />
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/border_radius_white"
+                android:hint="@string/email"
+                android:layout_marginBottom="15sp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/passwordField"
+                android:layout_width="359dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10sp"
+                android:background="@drawable/border_radius_white"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <!-- Update Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/updateButton"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="4sp"
+                    android:backgroundTint="#FFA500"
+                    android:text="Update"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Logout Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/logoutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48sp"
+                    android:layout_marginTop="8dp"
+                    android:text="Log Out"
+                    android:backgroundTint="#FFA500"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bottom Navigation Bar -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/explorer_bottom_nav_menu"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
