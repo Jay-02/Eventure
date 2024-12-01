@@ -104,4 +104,12 @@
     <string name="title_activity_admin_home">AdminHome</string>
     <string name="title_home">Home</string>
     <string name="title_notifications">Notifications</string>
+
+
+    <!-- Admin Profile -->
+    <string name="admin_profile_name_hint">Username</string>
+    <string name="admin_profile_email_hint">Email</string>
+    <string name="admin_profile_password_hint">Password</string>
+    <string name="admin_profile_update_button">Update</string>
+    <string name="admin_profile_logout_button">Log Out</string>
 </resources>

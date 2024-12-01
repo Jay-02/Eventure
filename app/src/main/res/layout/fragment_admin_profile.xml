@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.fragments.AdminProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/top_right_blob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/top_right_blob" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/admin_profile"
+        android:layout_width="311dp"
+        android:layout_height="241dp"
+        android:layout_below="@id/top_right_blob"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="55dp"
+        android:src="@drawable/admin_profile_icon" />
+
+    <EditText
+        android:id="@+id/adminProfileUsername"
+        android:ems="10"
+        android:hint="@string/admin_profile_name_hint"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/admin_profile"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Password"
+        android:paddingHorizontal="25dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:background="@drawable/custom_input_green"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/admin_profile_email"
+        android:ems="10"
+        android:hint="@string/admin_profile_email_hint"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/adminProfileUsername"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Password"
+        android:paddingHorizontal="25dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:background="@drawable/custom_input_green"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/admin_profile_password"
+        android:ems="10"
+        android:hint="@string/admin_profile_password_hint"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/admin_profile_email"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Password"
+        android:paddingHorizontal="25dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:background="@drawable/custom_input_green"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/admin_profile_update_button"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/admin_profile_password"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/dark_green"
+        android:text="@string/admin_profile_update_button"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/admin_profile_logout_button"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="@string/admin_profile_logout_button"
+        android:layout_below="@id/admin_profile_update_button"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/dark_green"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
