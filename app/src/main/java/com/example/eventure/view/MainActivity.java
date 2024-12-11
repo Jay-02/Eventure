@@ -25,13 +25,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button welcome_button = (Button) findViewById(R.id.welcome_button);
-      welcome_button.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              Intent intent = new Intent(MainActivity.this, AccountType.class);
-              startActivity(intent);
-          }
+        Button welcome_button = findViewById(R.id.welcome_button);
+      welcome_button.setOnClickListener(view -> {
+          Intent intent = new Intent(MainActivity.this, AccountType.class);
+          startActivity(intent);
+          overridePendingTransition(0, 0);
       });
     }
 }

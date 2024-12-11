@@ -1,8 +1,8 @@
 package com.example.eventure.view;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
@@ -12,10 +12,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.eventure.R;
-import com.example.eventure.databinding.ActivityExplorerHomeBinding;
-import com.example.eventure.view.fragments.EventOrganizerDashboardFragment;
-import com.example.eventure.view.fragments.EventOrganizerProfileFragment;
-import com.example.eventure.view.fragments.ExplorerHomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -26,6 +22,7 @@ public class ExplorerHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_explorer_home);
+
       //  ActivityExplorerHomeBinding binding = ActivityExplorerHomeBinding.inflate(getLayoutInflater());
       //  replaceFragment(new ExplorerHomeFragment());
       //  binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -43,7 +40,9 @@ public class ExplorerHome extends AppCompatActivity {
         navBar.setSelectedItemId(R.id.explorer_home_bottom_nav_button);
         navBar.setOnNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.explorer_profile_bottom_nav_button) {
-                startActivity(new Intent(this, ExplorerProfile.class));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startActivity(new Intent(this, ProfileActivity.class));
+                }
                 overridePendingTransition(0, 0);
             }
             if (item.getItemId() == R.id.explorer_home_bottom_nav_button) {
@@ -54,6 +53,7 @@ public class ExplorerHome extends AppCompatActivity {
                 auth.signOut();
                 startActivity(new Intent(this, ExplorerLogin.class));
                 overridePendingTransition(0, 0);
+                finish();
 
             }
 

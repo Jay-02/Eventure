@@ -86,18 +86,15 @@ public class ExplorerLogin extends AppCompatActivity implements ExplorerLoginCon
     @Override
     public void signIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            navigateToExplorerHome();
-                        } else {
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        navigateToExplorerHome();
+                    } else {
 
-                            // If sign in fails, display a message to the user.
-                            showLoginError("Wrong Email or password");
+                        // If sign in fails, display a message to the user.
+                        showLoginError("Wrong Email or password");
 
-                        }
                     }
                 });
     }
@@ -110,17 +107,20 @@ public class ExplorerLogin extends AppCompatActivity implements ExplorerLoginCon
     @Override
     public void navigateToExplorerHome() {
         startActivity(new Intent(getApplicationContext(), ExplorerHome.class));
+        overridePendingTransition(0, 0);
 
     }
 
     @Override
     public void navigateToExplorerSignUp() {
          startActivity(new Intent(this, ExplorerSignUp.class));
+        overridePendingTransition(0, 0);
     }
 
     @Override
     public void navigateToForgotPassword() {
         startActivity(new Intent(this, ForgotPassword.class));
+        overridePendingTransition(0, 0);
     }
 
 
