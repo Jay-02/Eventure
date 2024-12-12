@@ -105,4 +105,15 @@
     <string name="title_home">Home</string>
     <string name="title_notifications">Notifications</string>
     <string name="email">Email</string>
+    <string name="back_image">Back image</string>
+    <string name="age_range_icon">Age range icon</string>
+    <string name="location_icon">Location icon</string>
+    <string name="time_icon">Time icon</string>
+    <string name="time">time</string>
+    <string name="start_at_6_00_pm_to_8_00_pm">start at 6:00 pm to 8:00 pm</string>
+    <string name="_19_may_2024_thursday">19 May 2024 - Thursday</string>
+    <string name="calendar_icon">Calendar icon</string>
+    <string name="almond_book_club">Almond Book Club</string>
+    <string name="event_title_almond_book_club">Event title: Almond Book Club</string>
+    <string name="background_image_of_a_cafe">Background image of a cafe</string>
 </resources>
