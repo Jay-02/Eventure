@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.fragments.AdminDashboardFragment">
+<ImageView
+android:id="@+id/top_right_blobAD"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentTop="true"
+android:layout_alignParentEnd="true"
+android:layout_marginTop="0dp"
+android:layout_marginEnd="4dp"
+android:src="@drawable/top_right_blob" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<TextView
+android:id="@+id/admin_dashboard_manage"
+android:layout_width="302dp"
+android:layout_height="wrap_content"
+android:layout_alignParentTop="true"
+android:layout_alignParentEnd="true"
+android:layout_marginTop="107dp"
+android:layout_marginEnd="53dp"
+android:text="@string/admin_dashboard_manage"
+android:textAlignment="center"
+android:textColorLink="@color/black"
+android:textSize="24sp"
+android:textStyle="bold" />
 
-</FrameLayout>
+<TextView
+android:id="@+id/AD_event_list"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentTop="true"
+android:layout_alignParentEnd="true"
+android:layout_marginTop="188dp"
+android:layout_marginEnd="242dp"
+android:text="@string/AD_event_list"
+android:textColorLink="@color/black"
+android:textSize="24sp"
+android:textStyle="bold" />
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/recyclerView"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_below="@id/AD_event_list"
+android:layout_margin="8dp"
+android:paddingBottom="16dp" />
+</RelativeLayout>
