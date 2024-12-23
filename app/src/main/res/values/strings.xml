@@ -112,4 +112,6 @@
     <string name="admin_profile_password_hint">Password</string>
     <string name="admin_profile_update_button">Update</string>
     <string name="admin_profile_logout_button">Log Out</string>
+    <string name="admin_dashboard_manage">Manage Pending Events Submissions Here</string>
+    <string name="AD_event_list">Event List</string>
 </resources>
