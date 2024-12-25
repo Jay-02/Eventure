@@ -5,7 +5,8 @@
         android:orientation="horizontal"
         android:padding="8dp"
         android:background="@drawable/custom_input_green"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="8dp"
+    >
     <ImageView
         android:id="@+id/iv_event_image"
         android:layout_width="60dp"
@@ -69,3 +70,4 @@
 
             android:src="@drawable/declinee" />
     </LinearLayout>
+</LinearLayout>

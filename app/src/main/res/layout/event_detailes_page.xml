@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Event Image -->
+    <ImageView
+        android:id="@+id/event_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sample_event_image" />
+
+    <!-- Event Title -->
+    <TextView
+        android:id="@+id/tv_event_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:text="Almond Book Club"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Event Description -->
+    <TextView
+        android:id="@+id/tv_event_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Dive into Oliver Twist with us at Almond Coffee House! Enjoy coffee and conversation as we explore the novel's themes."
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <!-- Event Details -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp">
+
+        <!-- Sender -->
+        <TextView
+            android:id="@+id/tv_sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Almond Coffee House"
+            android:drawableStart="@drawable/aic_profile"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tv_event_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19 / May / 2024 - Thursday"
+            android:drawableStart="@drawable/aic_calander"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/tv_event_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start at 6:00 PM to 8:00 PM"
+            android:drawableStart="@drawable/aic_clock"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/tv_event_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amman - Rabyeh, Naim Abdul Hadi St. 24"
+            android:drawableStart="@drawable/aic_location"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Age Range -->
+        <TextView
+            android:id="@+id/tv_event_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16 - 30"
+            android:drawableStart="@drawable/aic_age"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Ticket Price -->
+        <TextView
+            android:id="@+id/tv_event_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 JD"
+            android:drawableStart="@drawable/aic_age"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp">
+
+        <Button
+            android:id="@+id/btn_approve"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dark_green"
+            android:text="Approve"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_reject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/error_red"
+            android:text="Reject"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

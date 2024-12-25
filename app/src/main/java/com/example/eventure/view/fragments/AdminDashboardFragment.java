@@ -10,6 +10,17 @@ import android.view.ViewGroup;
 
 import com.example.eventure.R;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AdminDashboardFragment#newInstance} factory method to
@@ -26,6 +37,10 @@ public class AdminDashboardFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private RecyclerView recyclerView;
+    private EventItemAdapter adapter;
+    private List<event> eventList;
+    private DatabaseReference databaseReference;
     public AdminDashboardFragment() {
         // Required empty public constructor
     }
@@ -62,5 +77,43 @@ public class AdminDashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_admin_dashboard, container, false);
+
+        // Initialize RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Initialize Event List and Adapter
+        eventList = new ArrayList<event>();
+        adapter = new EventItemAdapter(getContext(), eventList);
+        recyclerView.setAdapter(adapter);
+
+        // Initialize Firebase Database Reference
+        databaseReference = FirebaseDatabase.getInstance().getReference("events");
+
+        // Fetch Data from Firebase
+        fetchEventsFromFirebase();
+
+        return view;
+
+    }
+    private void fetchEventsFromFirebase() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                eventList.clear(); // Clear the list to avoid duplicates
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Event event = dataSnapshot.getValue(Event.class);
+                    if (event != null && "Waiting".equals(event.getStatus())) {
+                        eventList.add(event);
+                    }
+                }
+                adapter.notifyDataSetChanged(); // Notify the adapter to refresh the RecyclerView
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle any errors
+            }
+        });
     }
 }
