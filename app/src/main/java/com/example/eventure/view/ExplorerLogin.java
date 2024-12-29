@@ -20,6 +20,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExplorerLogin extends AppCompatActivity implements ExplorerLoginContract.View {
     private static final String TAG = "ExplorerLogin";
@@ -106,12 +112,30 @@ public class ExplorerLogin extends AppCompatActivity implements ExplorerLoginCon
 
     @Override
     public void navigateToExplorerHome() {
-        startActivity(new Intent(getApplicationContext(), ExplorerHome.class));
-        overridePendingTransition(0, 0);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String userUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        Intent intent = new Intent(getApplicationContext(), layout.class);
 
+        DocumentReference docRef = db.collection("Explorers").document(userUid);
+        docRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    // Get the string array or initialize an empty list if it's null
+                    ArrayList<String> stringArray = (ArrayList<String>) document.get("booked_events");
+                    if (stringArray == null) {
+                        stringArray = new ArrayList<>();
+                    }
+                    intent.putStringArrayListExtra("stringArrayKey", stringArray);
+                }
+            }
+            // Start the next activity only after the data has been fetched
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+        });
     }
 
-    @Override
+        @Override
     public void navigateToExplorerSignUp() {
          startActivity(new Intent(this, ExplorerSignUp.class));
         overridePendingTransition(0, 0);

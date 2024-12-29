@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:padding="16dp"
+    tools:context=".view.choose">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+
+
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/back"
+                android:contentDescription="Back Button"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08:00"
+                android:textSize="26sp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/top_right_blob"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="Back Button"
+                android:src="@drawable/top_right_blob" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="77dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Profile Image"
+                android:src="@drawable/man" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello Omar"
+                android:textSize="25sp"
+                android:textColor="#00A676"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Your Interests"
+            android:textSize="28sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/int1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="#E57D42"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Music"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/fav1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="heart"
+                    android:src="@drawable/heart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/int2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#E57D42"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Camping"
+                    android:textSize="22sp"
+                    android:textColor="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/fav2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+
+                    android:contentDescription="Heart Icon"
+                    android:src="@drawable/heart"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/int3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#E57D42"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Art"
+                    android:textSize="22sp"
+                    android:textColor="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/fav3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/heart"
+                    android:contentDescription="Heart Icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/int4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#E57D42"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/txt4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Adventure"
+                    android:textSize="22sp"
+                    android:textColor="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/fav4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/heart"
+                    android:contentDescription="Heart Icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/int5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#E57D42"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/txt5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sport"
+                    android:textSize="22sp"
+                    android:textColor="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/fav5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/heart"
+                    android:contentDescription="Heart Icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/int6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#E57D42"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/txt6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cooking"
+                    android:textSize="22sp"
+                    android:textColor="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/fav6"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/heart"
+                    android:contentDescription="Heart Icon" />
+
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
